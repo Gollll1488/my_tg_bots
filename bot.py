@@ -3,11 +3,10 @@ import logging
 import os
 from aiogram import Bot, Dispatcher, F
 from aiogram.filters import Command
-from aiogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, FSInputFile
+from aiogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
-9287103860:AAH0cpKvBg27o0qyAItuv-g3O95VqCNN9WI
-
+# Берем токен из настроек Render
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 logging.basicConfig(level=logging.INFO)
@@ -28,17 +27,14 @@ def get_main_menu():
 
 @dp.message(Command("start"))
 async def cmd_start(message: Message):
-    # Отправляем картинку с текстом и кнопками
-    photo = FSInputFile("menu.jpg") # Файл, который мы загрузили
-    
     text = (
         "👑 **Главное меню**\n\n"
         "Добро пожаловать! Выберите действие ниже:"
     )
     
-    await message.answer_photo(
-        photo=photo,
-        caption=text,
+    # Отправляем только текст с кнопками
+    await message.answer(
+        text=text,
         reply_markup=get_main_menu(),
         parse_mode="Markdown"
     )
