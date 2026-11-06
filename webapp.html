@@ -20,26 +20,28 @@
             box-sizing: border-box;
         }
         h1 {
-            font-size: 28px;
+            font-size: 32px;
             margin-bottom: 10px;
             text-align: center;
+            color: #fff;
         }
         p {
             color: #8e8e93;
             margin-bottom: 30px;
             text-align: center;
+            font-size: 16px;
         }
         .button {
             display: block;
             width: 100%;
             max-width: 300px;
-            padding: 15px;
+            padding: 18px;
             margin: 10px 0;
             background: linear-gradient(90deg, #0088cc, #00aaff);
             color: white;
             text-decoration: none;
             text-align: center;
-            border-radius: 12px;
+            border-radius: 14px;
             font-size: 18px;
             font-weight: bold;
             box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4);
@@ -56,7 +58,7 @@
     </style>
 </head>
 <body>
-    <h1>Создатели</h1>
+    <h1>👑 Создатели</h1>
     <p>Нажми на кнопку, чтобы написать:</p>
 
     <a href="https://t.me/morfinfuckk" class="button" target="_blank">👤 @morfinfuckk</a>
@@ -65,7 +67,6 @@
     <div class="footer">Powered by Telegram WebApp</div>
 
     <script>
-        // Инициализация Mini App (растягиваем на весь экран)
         let tg = window.Telegram.WebApp;
         tg.expand();
         tg.ready();
