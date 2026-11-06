@@ -8,9 +8,6 @@ from aiogram.utils.keyboard import InlineKeyboardBuilder
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 
-
-BOT_TOKEN = os.getenv("BOT_TOKEN")
-
 logging.basicConfig(level=logging.INFO)
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
