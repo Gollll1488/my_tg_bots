@@ -13,14 +13,16 @@ logging.basicConfig(level=logging.INFO)
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
 
+# ===== ССЫЛКА НА ТВОЕ ПРИЛОЖЕНИЕ (Netlify) =====
+WEBAPP_URL = "https://preeminent-frangipane-7041d3.netlify.app/webapp.html"
+
 def get_main_menu():
     builder = InlineKeyboardBuilder()
-    # Добавляем кнопку, которая открывает наше приложение
-    # ВАЖНО: ссылка должна быть на реальный файл webapp.html на Render
+    # Кнопка "Панелька", которая открывает приложение
     builder.row(
         InlineKeyboardButton(
-            text="🚀 Открыть приложение", 
-            web_app=WebAppInfo(url="https://my-tg-bots.onrender.com/webapp.html")
+            text="🔗 Панелька", 
+            web_app=WebAppInfo(url=WEBAPP_URL)
         )
     )
     builder.row(
@@ -31,7 +33,7 @@ def get_main_menu():
 @dp.message(Command("start"))
 async def cmd_start(message: Message):
     await message.answer(
-        text="👑 **Главное меню**\n\nНажми на кнопку ниже, чтобы открыть мини-приложение!",
+        text="👑 **Главное меню**\n\nНажми на кнопку **«Панелька»**, чтобы открыть мини-приложение!",
         reply_markup=get_main_menu(),
         parse_mode="Markdown"
     )
