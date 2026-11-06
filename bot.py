@@ -6,7 +6,8 @@ from aiogram.filters import Command
 from aiogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, FSInputFile
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 
-# Берем токен из настроек Render
+9287103860:AAH0cpKvBg27o0qyAItuv-g3O95VqCNN9WI
+
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 logging.basicConfig(level=logging.INFO)
