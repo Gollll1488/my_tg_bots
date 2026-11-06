@@ -5,7 +5,7 @@ from aiogram.filters import Command
 from aiogram.types import Message
 
 # ===== ТВОЙ ТОКЕН =====
-BOT_TOKEN = "9287103860:AAFSUfIQn8aV8NxVLjCSArUhJXdMrWUXaHA"
+BOT_TOKEN = "9287103860:AAH0cpKvBg27o0qyAItuv-g3O95VqCNN9WI"
 
 logging.basicConfig(level=logging.INFO)
 bot = Bot(token=BOT_TOKEN)
