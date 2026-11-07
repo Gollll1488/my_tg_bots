@@ -14,11 +14,12 @@ bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
 
 # ===== ССЫЛКА НА ТВОЕ ПРИЛОЖЕНИЕ (Netlify) =====
+# Убедись, что ссылка правильная и заканчивается на /webapp.html
 WEBAPP_URL = "https://preeminent-frangipane-7041d3.netlify.app/webapp.html"
 
 def get_main_menu():
     builder = InlineKeyboardBuilder()
-    # Кнопка "Панелька", которая открывает приложение
+    # Кнопка "Панелька" с открытием WebApp
     builder.row(
         InlineKeyboardButton(
             text="🔗 Панелька", 
@@ -33,7 +34,7 @@ def get_main_menu():
 @dp.message(Command("start"))
 async def cmd_start(message: Message):
     await message.answer(
-        text="👑 **Главное меню**\n\nНажми на кнопку **«Панелька»**, чтобы открыть мини-приложение!",
+        text="👑 **Главное меню**\n\nНажми на кнопку **«Панелька»**, чтобы открыть мини-приложение с создателями!",
         reply_markup=get_main_menu(),
         parse_mode="Markdown"
     )
